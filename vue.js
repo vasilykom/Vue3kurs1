@@ -18,15 +18,31 @@ const App = {
   methods: {
     prev() {
       // когда нажимаем кнопку назад
+      if(this.activeIndex>0){
+        this.activeIndex--
+        console.log('prev',this.activeIndex)
+      }
+
     },
     reset() {
       // начать заново
     },
     nextOfFinish() {
       // кнопка вперед или закончить
+      if(this.activeIndex<this.steps.length-1){
+        this.activeIndex++
+        console.log('finish',this.activeIndex)
+      }
     },
-    setActive(idx) {
+    setActive(idx,item) {
       // когда нажимаем на определенный шаг
+      this.activeIndex=idx
+      console.log('setActive',idx,item)
+
+    },
+    setIndexOnClick(){
+      console.log('setIndexOnClick')
+      this.activeIndex=idx
     }
   },
   computed: {
@@ -34,6 +50,24 @@ const App = {
     // 1. текущий выбранный шаг
     // 2. выключена ли кнопка назад
     // 3. находимся ли мы на последнем шаге
+
+/*    comput(){
+      console.log('comput')
+        return{
+          'steps-item ':
+        }
+
+    },*/
+
+
+    activeButton(){
+
+      console.log('activeButton',this.activeIndex)
+      return{
+        'steps-item done': this.activeIndex
+      }
+
+    }
   }
 }
 
