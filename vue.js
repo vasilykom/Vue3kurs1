@@ -20,24 +20,23 @@ const App = {
       // когда нажимаем кнопку назад
       if(this.activeIndex>0){
         this.activeIndex--
-        console.log('prev',this.activeIndex)
       }
 
     },
     reset() {
-      this.activeIndex==0
+      this.activeIndex=0
     },
     nextOfFinish() {
       // кнопка вперед или закончить
       if(this.activeIndex<this.steps.length-1){
         this.activeIndex++
-        console.log('finish',this.activeIndex)
       }
+
+
     },
     setActive(idx) {
       // когда нажимаем на определенный шаг
       this.activeIndex=idx
-      console.log('setActive',idx)
 
     },
     setIndexOnClick(){
