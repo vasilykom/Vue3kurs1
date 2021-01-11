@@ -25,7 +25,7 @@ const App = {
 
     },
     reset() {
-      // начать заново
+      this.activeIndex==0
     },
     nextOfFinish() {
       // кнопка вперед или закончить
@@ -34,10 +34,10 @@ const App = {
         console.log('finish',this.activeIndex)
       }
     },
-    setActive(idx,item) {
+    setActive(idx) {
       // когда нажимаем на определенный шаг
       this.activeIndex=idx
-      console.log('setActive',idx,item)
+      console.log('setActive',idx)
 
     },
     setIndexOnClick(){
@@ -51,23 +51,6 @@ const App = {
     // 2. выключена ли кнопка назад
     // 3. находимся ли мы на последнем шаге
 
-/*    comput(){
-      console.log('comput')
-        return{
-          'steps-item ':
-        }
-
-    },*/
-
-
-    activeButton(){
-
-      console.log('activeButton',this.activeIndex)
-      return{
-        'steps-item done': this.activeIndex
-      }
-
-    }
   }
 }
 
