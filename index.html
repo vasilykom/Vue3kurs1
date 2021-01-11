@@ -37,7 +37,12 @@
                   @click="prev"
 
           >Назад</button>
-          <button class="btn"
+          <button v-if="activeIndex>steps.length-2"
+                  class='btn primary'
+                  @click="nextOfFinish"
+          >Начать заново</button>
+
+          <button v-else class="btn"
                   :class="activeIndex>steps.length-2?'btn hidden':'btn primary'"
                   @click="nextOfFinish"
                   >Вперед</button>
