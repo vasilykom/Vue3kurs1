@@ -31,7 +31,8 @@
 
         </ul>
         <div >
-          <button class="btn"
+          <button v-if="activeIndex<steps.length-1"
+                  class="btn"
                   :class="activeIndex<1?'btn':'btn primary'"
                   @click="prev"
 
@@ -39,8 +40,8 @@
           <button class="btn"
                   :class="activeIndex>steps.length-2?'btn hidden':'btn primary'"
                   @click="nextOfFinish"
-
                   >Вперед</button>
+
         </div>
       </div>
     </div>
